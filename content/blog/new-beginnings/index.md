@@ -1,7 +1,9 @@
 ---
-title: New Beginnings
+title: BAME Mental health support
 date: "2015-05-28T22:40:32.169Z"
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium dui diam, sed pulvinar nulla molestie in. Etiam at arcu velit. Curabitur vestibulum lobortis malesuada. Sed sagittis faucibus mi sed porttitor.
+featuredImage: "./salty_egg.jpg"
+category: "advice"
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and
