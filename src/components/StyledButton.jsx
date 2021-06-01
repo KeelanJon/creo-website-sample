@@ -9,13 +9,14 @@ function StyledButton(props) {
         bgColor={props.buttonColor}
         primary={props.primary}
         color={props.textColor}
+        style={props.style}
       >
         {props.children}
       </PrimaryButton>
     )
   } else {
     return (
-      <SecondaryButton color={props.textColor}>
+      <SecondaryButton color={props.textColor} style={props.style}>
         {props.children}
       </SecondaryButton>
     )

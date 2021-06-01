@@ -16,6 +16,7 @@ import Services from "../components/sections/Services"
 import Stories from "../components/sections/Stories"
 import LatestUpdates from "../components/sections/LatestUpdates"
 import Volunteer from "../components/sections/Volunteer"
+import TopBar from "../components/TopBar"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -27,7 +28,7 @@ const BlogIndex = ({ data, location }) => {
       <Slider />
       <Services />
       <Stories />
-      <Volunteer />
+      {/* <Volunteer /> */}
       <LatestUpdates postData={posts} />
     </Layout>
   )

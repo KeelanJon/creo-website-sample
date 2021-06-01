@@ -1,93 +1,118 @@
 import React from "react"
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap"
 import styled from "styled-components"
+import { Link } from "gatsby"
 import StyledButton from "./StyledButton"
+import Logo from "./Logo"
 
-const StyledNav = styled(Navbar)`
+//Array used to store nav link data
+//Note to self, perhaps you should store this in a seperate file?
 
-  padding: 1.5rem; 0;
+const NavLinks = [
+  {
+    name: "Find Help",
+    link: "https://google.com",
+    subLinks: [
+      {
+        name: "Our Services",
+        link: "/",
+      },
+    ],
+  },
+  {
+    name: "Get Involved",
+    link: "https://google.com",
+  },
+  {
+    name: "Updates",
+    link: "https://google.com",
+  },
+  {
+    name: "Resources",
+    link: "https://google.com",
+  },
+  {
+    name: "About Us",
+    link: "https://google.com",
+  },
+  {
+    name: "Contact",
+    link: "https://google.com",
+  },
+]
 
-
-  .nav-link{
-    
-    background: red;
-
-  }
-
-`
-
-const NavBanner = styled(Navbar)`
-  background: ${props => props.theme.main.primaryColor};
-`
-
-function Header() {
+function Header(props) {
   return (
-    <div>
-      {/*Upper Nav bar */}
-      <NavBanner>
-        <Navbar.Brand href="#home">Text side AAA</Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end">
-          <Form inline>
-            <span>Icon</span>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          </Form>
-          <Navbar.Text>
-            Search<a href="#login">Mark Otto</a>
-          </Navbar.Text>
-          <Navbar.Text>
-            Search<a href="#login">Mark Otto</a>
-          </Navbar.Text>
-        </Navbar.Collapse>
-      </NavBanner>
-
-      {/*Primary Navbar */}
-      <StyledNav bg="light" expand="lg">
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto ml-auto">
-            <NavDropdown title="Find Help">
-              <NavDropdown.Item href="https://google.com">
-                Our Servicecs
-              </NavDropdown.Item>
-              <NavDropdown.Item href="https://google.com">
-                How we can help
-              </NavDropdown.Item>
-              <NavDropdown.Item href="https://google.com">
-                Referrals
-              </NavDropdown.Item>
-              <NavDropdown.Item href="https://google.com">
-                Do you require urgent help?
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-          <StyledButton className=".me-3">Donate</StyledButton>
-          <Button variant="outline-success">Search</Button>
-        </Navbar.Collapse>
-      </StyledNav>
-    </div>
+    <Container>
+      <ContentWrapper>
+        <div>
+          <Logo />
+        </div>
+        <StyledNav>
+          {NavLinks.map(function (item, index) {
+            return <Link to={item.link}>{item.name}</Link>
+          })}
+        </StyledNav>
+        <div>
+          <StyledButton
+            textColor={props => props.theme.main.white}
+            primary={true}
+            style={{ marginRight: "1rem" }}
+          >
+            Donate
+          </StyledButton>
+          <StyledButton
+            textColor={props => props.theme.main.white}
+            buttonColor={props => props.theme.main.pink}
+            primary={true}
+          >
+            Need Urgent Help?
+          </StyledButton>
+        </div>
+      </ContentWrapper>
+    </Container>
   )
 }
 
 export default Header
+
+const Container = styled.div`
+  padding: 0rem 5vw;
+  width: 100%;
+
+  width: 100%;
+  color: ${props => props.theme.main.white};
+  font-size: ${props => props.theme.fontSizes.small};
+
+  @media screen and (max-width: ${props =>
+      props.theme.screenDimensions.tablet}) {
+    display: none;
+  }
+`
+
+const ContentWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: ${props => props.theme.screenDimensions.desktop};
+  margin: auto auto;
+`
+
+const StyledNav = styled.nav`
+  color: ${props => props.theme.main.blue};
+  padding: 0 0rem;
+
+  a {
+    padding: 1rem 1rem;
+    font-family: ${props => props.theme.fonts.regular};
+    color: ${props => props.theme.main.blue};
+
+    &:hover {
+      color: ${props => props.theme.main.pink};
+    }
+  }
+`
+
+const StyledSubMenu = styled.div`
+  background: ${props => props.theme.main.white};
+`

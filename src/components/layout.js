@@ -3,6 +3,10 @@ import { Link } from "gatsby"
 import Header from "./Header"
 import GlobalStyle from "../globalStyles"
 import Theme from "../styles/Theme"
+import TopBar from "./TopBar"
+import MobileHeader from "./MobileHeader"
+import MobileNav from "./MobileNav"
+import Footer from "./Footer"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -26,14 +30,12 @@ const Layout = ({ location, title, children }) => {
   return (
     <Theme className="global-wrapper" data-is-root-path={isRootPath}>
       <GlobalStyle />
-      {/* <header className="global-header">{header}</header> */}
+      <TopBar />
       <Header />
+      <MobileHeader />
+      <MobileNav />
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+      <Footer />
     </Theme>
   )
 }

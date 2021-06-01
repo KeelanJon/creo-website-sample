@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 function SectionContainer(props) {
   return (
-    <StyledContainer bgColor={props.bgColor}>
+    <StyledContainer bgColor={props.bgColor} styles={props.styles}>
       <ContentWrapper wrapperColor={props.wrapperColor}>
         {props.children}
       </ContentWrapper>

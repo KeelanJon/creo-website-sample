@@ -33,7 +33,7 @@ function Volunteer(props) {
             alt="An illustration of a person holding a star"
             placeholder="blurred"
             layout="fixed"
-            width={650}
+            width={600}
             height={600}
           />
         </div>
@@ -55,6 +55,11 @@ const FlexContainer = styled.div`
 
   position: relative;
   z-index: 20;
+
+  @media screen and (max-width: ${props =>
+      props.theme.screenDimensions.tablet}) {
+    flex-direction: column;
+  }
 `
 
 const TextWrapper = styled.div`

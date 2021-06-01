@@ -1,74 +1,113 @@
 import React from "react"
-import { Carousel, Jumbotron, Button } from "react-bootstrap"
+import { Carousel } from "react-bootstrap"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
-import FeaturedImage from "../images/smiling-woman.jpg"
 import StyledButton from "./StyledButton"
-
-const Slide = styled(Jumbotron)`
-  color: ${props => props.theme.main.mainFontColor};
-
-  background: url(${props => props.bgImage});
-  background-size: cover;
-  background-position: center;
-
-  padding: 20vh 10vw;
-  height: 50vh;
-
-  h1 {
-    font-size: 4rem;
-    max-width: 600px;
-  }
-
-  p {
-    max-width: 600px;
-    padding: 1rem 0;
-  }
-`
-
-//Image and content wrapper not used.
-//I'm currently experimenting with the new gatsby image plugin
-//to ecorporate more image optimisation
-const ImageWrapper = styled.div`
-  background: red;
-  position: absolute;
-  width: 100%;
-`
-
-const contentWraper = styled.div`
-  position: relative;
-  z-index: 1;
-`
+import FeaturedImage from "../images/smiling-woman.jpg"
 
 function Slider() {
+  const slideID = [1, 2, 3]
+
   return (
-    <Carousel>
-      <Carousel.Item>
-        <Slide bgImage={FeaturedImage}>
-          <h1>Join the fight for mental health!</h1>
-          <p>
-            We connect minds. We Support minds. We change minds. For support.
-            For respect. For you.
-          </p>
-          <p>
-            <StyledButton primary={true}>Learn more</StyledButton>
-          </p>
-        </Slide>
-      </Carousel.Item>
-      <Carousel.Item>
-        <Slide bgImage={FeaturedImage}>
-          <h1>Hello, world!</h1>
-          <p>
-            This is a simple hero unit, a simple jumbotron-style component for
-            calling extra attention to featured content or information.
-          </p>
-          <p>
-            <StyledButton primary={true}>Learn more</StyledButton>
-          </p>
-        </Slide>
-      </Carousel.Item>
-    </Carousel>
+    <StyledCarousel indicators>
+      {slideID.map(function (item) {
+        return (
+          <Carousel.Item key={item}>
+            <Slide bgImage={FeaturedImage}>
+              <ContentWrapper>
+                <h1>Join the fight for mental health!</h1>
+                <p>
+                  We connect minds. We Support minds. We change minds. For
+                  support. For respect. For you.
+                </p>
+
+                <StyledButton
+                  primary={true}
+                  textColor={props => props.theme.main.white}
+                  styles={mobileButtonStyles}
+                >
+                  View Our Services
+                </StyledButton>
+              </ContentWrapper>
+            </Slide>
+          </Carousel.Item>
+        )
+      })}
+    </StyledCarousel>
   )
 }
 
 export default Slider
+
+const mobileButtonStyles = {
+  width: "100%",
+}
+
+const StyledCarousel = styled(Carousel)`
+  .carousel-indicators {
+    padding: 3rem 0;
+
+    li {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: none;
+      border: 2px solid #ffffff;
+      margin: 0 0.5rem;
+    }
+    .active {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffffff;
+    }
+  }
+
+  @media screen and (max-width: ${props =>
+      props.theme.screenDimensions.mobile}) {
+    .carousel-indicators {
+      padding: 2rem 0;
+    }
+  }
+`
+
+const Slide = styled.div`
+  color: ${props => props.theme.main.white};
+  background: url(${props => props.bgImage});
+  background-size: cover;
+  background-position: center;
+
+  padding: 25vh 5vw;
+  height: 100%;
+
+  h1 {
+    font-size: 4rem;
+    max-width: 650px;
+  }
+
+  p {
+    max-width: 450px;
+    padding: 1rem 0;
+  }
+
+  @media screen and (max-width: ${props =>
+      props.theme.screenDimensions.mobile}) {
+    padding: 40vh 5vw 5vh 5vw;
+    text-align: center;
+    background-size: 350% auto;
+    background-position: center;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      margin: auto auto;
+    }
+  }
+`
+const ContentWrapper = styled.div`
+  margin: auto auto;
+  max-width: 1440px;
+  width: 100%;
+`

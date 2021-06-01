@@ -57,6 +57,40 @@ const services = [
   },
 ]
 
+//Service component here
+function Services() {
+  return (
+    <SectionContainer>
+      <TextWrapper>
+        <h2>
+          How can we help<span>?</span>
+        </h2>
+      </TextWrapper>
+
+      <ServicesContainer>
+        {services.map(function (item, index) {
+          return (
+            <ServiceCard bgColor={item.bgColor} color={item.textColor}>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+              <a href="https://google.com">{item.callToAction}</a>
+            </ServiceCard>
+          )
+        })}
+      </ServicesContainer>
+      <TextWrapper>
+        <StyledButton>
+          <a href="https://google.com">Explore all services</a>
+        </StyledButton>
+      </TextWrapper>
+    </SectionContainer>
+  )
+}
+
+export default Services
+
 //Container used to create grid layout
 const ServicesContainer = styled.div`
   display: grid;
@@ -70,7 +104,7 @@ const ServicesContainer = styled.div`
 
   @media screen and (max-width: ${props =>
       props.theme.screenDimensions.mobile}) {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 `
 
@@ -109,6 +143,28 @@ const ServiceCard = styled.div`
     font-size: ${props => props.theme.fontSizes.small};
     color: ${props => props.color};
   }
+
+  /* Card Mobile Styles */
+  @media screen and (max-width: ${props =>
+      props.theme.screenDimensions.mobile}) {
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    padding: 2rem 1rem;
+
+    h3 {
+      padding: 0;
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    p,
+    a {
+      display: none;
+    }
+  }
 `
 
 const TextWrapper = styled.div`
@@ -124,38 +180,19 @@ const TextWrapper = styled.div`
       color: #8149ff;
     }
   }
+
+  /* Mobile Styles */
+  @media screen and (max-width: ${props =>
+      props.theme.screenDimensions.mobile}) {
+    grid-template-columns: repeat(2, 1fr);
+
+    h2 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 2rem;
+      padding-right: 5rem;
+      padding-bottom: 0.5rem;
+    }
+  }
 `
-
-//Service component here
-function Services() {
-  return (
-    <SectionContainer>
-      <TextWrapper>
-        <h2>
-          How can we help<span>?</span>
-        </h2>
-      </TextWrapper>
-
-      <ServicesContainer>
-        {services.map(function (item, index) {
-          return (
-            <ServiceCard bgColor={item.bgColor} color={item.textColor}>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-              <a href="https://google.com">{item.callToAction}</a>
-            </ServiceCard>
-          )
-        })}
-      </ServicesContainer>
-      <TextWrapper>
-        <StyledButton>
-          <a href="https://google.com">Explore all services</a>
-        </StyledButton>
-      </TextWrapper>
-    </SectionContainer>
-  )
-}
-
-export default Services

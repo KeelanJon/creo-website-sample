@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import { graphql } from "gatsby"
+import { Carousel } from "react-bootstrap"
 import StyledButton from "../StyledButton"
 import SectionContainer from "./SectionContainer"
 import FlexBox from "../FlexBox"
@@ -38,8 +39,12 @@ const storyCardData = [
 ]
 
 function Stories(props) {
+  const breakPoint = 1280
+  const screenWidth = window.innerWidth
+
   return (
     <SectionContainer bgColor={props => props.theme.main.blue}>
+      {console.log(screenWidth)}
       <SectionTitle>
         <FlexBox justify="space-between" align="center">
           <div>
@@ -53,26 +58,57 @@ function Stories(props) {
         </FlexBox>
       </SectionTitle>
 
-      <CardContainer>
-        {storyCardData.map(function (item, index) {
-          return (
-            <StoryCard key={index}>
-              <img src={quotesSVG} alt="Cotation" className="quotes" />
-              <StaticImage
-                src={"../../images/leaning-man.jpg"}
-                alt="Image of a person"
-                placeholder="blurred"
-                className="imgStyle"
-              />
-              <h4>{item.name + ", " + item.age}</h4>
-              <p>"{item.description}"</p>
-              <StyledButton textColor={props => props.theme.main.white}>
-                <a href="htpps://google.com">Read {item.name}'s story</a>
-              </StyledButton>
-            </StoryCard>
-          )
-        })}
-      </CardContainer>
+      {/*Here we have a conditional render
+        Component will render a coursel style area if on tablet or mobile
+        and will render as normal on desktop
+       */}
+      {screenWidth <= breakPoint ? (
+        <StyledCarousel indicators={false} controls={false}>
+          {storyCardData.map(function (item, index) {
+            return (
+              <Carousel.Item key={index}>
+                <StoryCard>
+                  <img src={quotesSVG} alt="Cotation" className="quotes" />
+                  <StaticImage
+                    src={"../../images/leaning-man.jpg"}
+                    alt="Image of a person"
+                    placeholder="blurred"
+                    className="imgStyle"
+                  />
+                  <h4>{item.name + ", " + item.age}</h4>
+                  <p>"{item.description}"</p>
+                  <StyledButton textColor={props => props.theme.main.white}>
+                    <a href="htpps://google.com">Read {item.name}'s story</a>
+                  </StyledButton>
+                </StoryCard>
+              </Carousel.Item>
+            )
+          })}
+        </StyledCarousel>
+      ) : (
+        <CardContainer>
+          {storyCardData.map(function (item, index) {
+            return (
+              <StoryCard key={index}>
+                <img src={quotesSVG} alt="Cotation" className="quotes" />
+                <StaticImage
+                  src={"../../images/leaning-man.jpg"}
+                  alt="Image of a person"
+                  placeholder="blurred"
+                  className="imgStyle"
+                />
+                <h4>{item.name + ", " + item.age}</h4>
+                <p>"{item.description}"</p>
+                <StyledButton textColor={props => props.theme.main.white}>
+                  <a href="htpps://google.com">Read {item.name}'s story</a>
+                </StyledButton>
+              </StoryCard>
+            )
+          })}
+        </CardContainer>
+      )}
+
+      {screenWidth < 500 ? console.log("yes") : console.log("no")}
     </SectionContainer>
   )
 }
@@ -109,8 +145,13 @@ const CardContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  grid-gap: 5rem;
+  grid-gap: 8rem;
   padding: 5rem 0;
+
+  @media screen and (max-width: ${props =>
+      props.theme.screenDimensions.tablet}) {
+    flex-direction: column;
+  }
 `
 
 const StoryCard = styled.div`
@@ -141,6 +182,10 @@ const StoryCard = styled.div`
     font-family: ${props => props.theme.fonts.regular};
   }
 `
+
+const StyledCarousel = styled(Carousel)``
+
+const Slide = styled.div``
 
 const quotesStyles = styled.img``
 
