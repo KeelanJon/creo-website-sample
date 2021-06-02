@@ -13,16 +13,24 @@ function LatestUpdates(props) {
       <TextWrapper>
         <h2>Latest Updates</h2>
         <StyledButton>
-          <a href="https://google.com">View all updates</a>
+          <a href="https://google.com">View all</a>
         </StyledButton>
       </TextWrapper>
-
       <ArticlesWrapper>
         {posts.map(function (post, index) {
           const image = getImage(post.frontmatter.featuredImage)
           return (
             <ArticleCard>
-              <GatsbyImage src={image} alt="An image" />
+              {{ image } ? (
+                <GatsbyImage
+                  image={image}
+                  alt="Blog post header image"
+                  className="article-image"
+                />
+              ) : (
+                <p>No image</p>
+              )}
+
               <span>{post.frontmatter.category}</span>
               <h3>
                 <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
@@ -66,10 +74,15 @@ const ArticleCard = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  img {
-    height: 500px;
+  .article-image {
+    height: 225px;
     width: auto;
-    background: red;
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: ${props =>
+        props.theme.screenDimensions.tablet}) {
+      height: 400px;
+    }
   }
 
   span {

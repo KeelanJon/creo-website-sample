@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
     @font-face{
         font-family: 'Mind Meridian Display';
         src: url(${MindMeridianDisplay}) format('opentype');
-        font-style: normal;
+        font-style: normal; 
     }
 
     
@@ -43,6 +43,12 @@ const GlobalStyle = createGlobalStyle`
         h2{
             font-family: ${props => props.theme.fonts.display};
             font-size: ${props => props.theme.fontSizes.large};
+        
+            @media screen and (max-width: ${props =>
+              props.theme.screenDimensions.mobile}) {
+            font-size: 1.5rem;
+    }
+        
         }
 
         a{

@@ -39,12 +39,8 @@ const storyCardData = [
 ]
 
 function Stories(props) {
-  const breakPoint = 1280
-  const screenWidth = window.innerWidth
-
   return (
     <SectionContainer bgColor={props => props.theme.main.blue}>
-      {console.log(screenWidth)}
       <SectionTitle>
         <FlexBox justify="space-between" align="center">
           <div>
@@ -58,57 +54,26 @@ function Stories(props) {
         </FlexBox>
       </SectionTitle>
 
-      {/*Here we have a conditional render
-        Component will render a coursel style area if on tablet or mobile
-        and will render as normal on desktop
-       */}
-      {screenWidth <= breakPoint ? (
-        <StyledCarousel indicators={false} controls={false}>
-          {storyCardData.map(function (item, index) {
-            return (
-              <Carousel.Item key={index}>
-                <StoryCard>
-                  <img src={quotesSVG} alt="Cotation" className="quotes" />
-                  <StaticImage
-                    src={"../../images/leaning-man.jpg"}
-                    alt="Image of a person"
-                    placeholder="blurred"
-                    className="imgStyle"
-                  />
-                  <h4>{item.name + ", " + item.age}</h4>
-                  <p>"{item.description}"</p>
-                  <StyledButton textColor={props => props.theme.main.white}>
-                    <a href="htpps://google.com">Read {item.name}'s story</a>
-                  </StyledButton>
-                </StoryCard>
-              </Carousel.Item>
-            )
-          })}
-        </StyledCarousel>
-      ) : (
-        <CardContainer>
-          {storyCardData.map(function (item, index) {
-            return (
-              <StoryCard key={index}>
-                <img src={quotesSVG} alt="Cotation" className="quotes" />
-                <StaticImage
-                  src={"../../images/leaning-man.jpg"}
-                  alt="Image of a person"
-                  placeholder="blurred"
-                  className="imgStyle"
-                />
-                <h4>{item.name + ", " + item.age}</h4>
-                <p>"{item.description}"</p>
-                <StyledButton textColor={props => props.theme.main.white}>
-                  <a href="htpps://google.com">Read {item.name}'s story</a>
-                </StyledButton>
-              </StoryCard>
-            )
-          })}
-        </CardContainer>
-      )}
-
-      {screenWidth < 500 ? console.log("yes") : console.log("no")}
+      <CardContainer>
+        {storyCardData.map(function (item, index) {
+          return (
+            <StoryCard key={index}>
+              <img src={quotesSVG} alt="Cotation" className="quotes" />
+              <StaticImage
+                src={"../../images/leaning-man.jpg"}
+                alt="Image of a person"
+                placeholder="blurred"
+                className="imgStyle"
+              />
+              <h4>{item.name + ", " + item.age}</h4>
+              <p>"{item.description}"</p>
+              <StyledButton textColor={props => props.theme.main.white}>
+                <a href="htpps://google.com">Read {item.name}'s story</a>
+              </StyledButton>
+            </StoryCard>
+          )
+        })}
+      </CardContainer>
     </SectionContainer>
   )
 }
