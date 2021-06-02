@@ -1,4 +1,5 @@
 import React from "react"
+import { useState, useEffect } from "react"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 import StyledButton from "../StyledButton"
@@ -6,14 +7,15 @@ import SectionContainer from "./SectionContainer"
 import FlexBox from "../FlexBox"
 
 //image imports
-import squiggle from "../../assets/illustrations/squiggle_layering_large-2.jpg"
+import squiggle from "../../assets/illustrations/squiggle_layering_large.jpg"
 
-function Volunteer(props) {
+//React component right here
+function Fundraise(props) {
   return (
-    <SectionContainer>
+    <SectionContainer wrapperColor={props => props.theme.main.lightBlue}>
       <FlexContainer>
         <TextWrapper>
-          <h2>Volunteer with us!</h2>
+          <h2>Fundraise for us!</h2>
           <p>
             Volunteering with us can help connect mind, support minds and change
             minds. You can volunteer at one of our events or as apart of a
@@ -22,17 +24,17 @@ function Volunteer(props) {
           <ButtonWrapper className="desktop-button">
             <StyledButton
               primary={true}
-              buttonColor={props => props.theme.main.white}
-              textColor={props => props.theme.main.pink}
-              style={{ fontSize: "1rem", padding: "1rem" }}
+              buttonColor={props => props.theme.main.blue}
+              textColor={props => props.theme.main.white}
+              style={{ padding: "1rem" }}
             >
-              <a href="https://google.com">Apply for a volunteering role</a>
+              <a href="https://google.com">Fundraising opportunities</a>
             </StyledButton>
           </ButtonWrapper>
         </TextWrapper>
         <IllustrationWrapper>
           <StaticImage
-            src="../../assets/illustrations/volunteer.svg"
+            src="../../assets/illustrations/fundraise.svg"
             alt="An illustration of a person holding a star"
             placeholder="blurred"
             className="illustration-image"
@@ -41,11 +43,11 @@ function Volunteer(props) {
         <ButtonWrapper className="mobile-button">
           <StyledButton
             primary={true}
-            buttonColor={props => props.theme.main.white}
-            textColor={props => props.theme.main.pink}
-            style={{ fontSize: "1rem", width: "100%" }}
+            buttonColor={props => props.theme.main.blue}
+            textColor={props => props.theme.main.white}
+            style={{ padding: "1rem", width: "100%" }}
           >
-            <a href="https://google.com">Apply for a volunteering role</a>
+            <a href="https://google.com">Fundraising opportunities</a>
           </StyledButton>
         </ButtonWrapper>
       </FlexContainer>
@@ -54,15 +56,16 @@ function Volunteer(props) {
   )
 }
 
-export default Volunteer
+export default Fundraise
 
+//Hey there, here's the styled components again!
 const FlexContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: ${props => props.theme.main.lightBlue};
 
-  padding: 1rem 5rem;
-  background: ${props => props.theme.main.pink};
+  padding: 2rem 5rem;
 
   position: relative;
   z-index: 20;
@@ -70,9 +73,7 @@ const FlexContainer = styled.div`
   @media screen and (max-width: ${props =>
       props.theme.screenDimensions.tablet}) {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 2rem;
+    padding: 2rem;
   }
 
   @media screen and (max-width: ${props =>
@@ -94,7 +95,7 @@ const ButtonWrapper = styled.div`
 `
 const TextWrapper = styled.div`
   flex: 1;
-  color: ${props => props.theme.main.white};
+  color: ${props => props.theme.main.blue};
 
   h2 {
     font-size: 4rem;
@@ -109,20 +110,13 @@ const TextWrapper = styled.div`
   @media screen and (max-width: ${props =>
       props.theme.screenDimensions.tablet}) {
     h2 {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
   }
 `
 
 const IllustrationWrapper = styled.div`
   flex: 1;
-  display: flex;
-  align-items: bottom;
-  justify-content: flex-end;
-
-  .illustration-image {
-    margin-bottom: -1rem;
-  }
 `
 
 //BackgroundImage styles used for the background squiggles

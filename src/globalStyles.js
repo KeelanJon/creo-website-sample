@@ -55,6 +55,8 @@ const GlobalStyle = createGlobalStyle`
             text-decoration: none !important;
             font-family: ${props => props.theme.fonts.bold};
         }
+
+        
     }
 
 `

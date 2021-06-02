@@ -58,13 +58,20 @@ const TextWrapper = styled.div`
 `
 
 const ArticlesWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 5rem;
+
+  padding-top: 3rem;
 
   @media screen and (max-width: ${props =>
       props.theme.screenDimensions.tablet}) {
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: ${props =>
+      props.theme.screenDimensions.mobile}) {
+    grid-template-columns: 1fr;
   }
 `
 

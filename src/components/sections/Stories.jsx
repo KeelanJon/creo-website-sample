@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
-import { graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { Carousel } from "react-bootstrap"
 import StyledButton from "../StyledButton"
 import SectionContainer from "./SectionContainer"
@@ -14,31 +14,28 @@ import AmobiImage from "../../images/senior-man.jpg"
 import { propTypes } from "react-bootstrap/esm/Image"
 import quotesSVG from "../../assets/illustrations/quotes.svg"
 
-const storyCardData = [
-  {
-    name: "Rojal",
-    age: "26",
-    description:
-      "I found family and Community. I found something to be part of...I came from a bad place and now I am on my way to sorting out my life a step at a time.",
-    image: "../../images/leaning-man.jpg",
-  },
-  {
-    name: "Nic",
-    age: "43",
-    description:
-      "I found family and Community. I found something to be part of...I came from a bad place and now I am on my way to sorting out my life a step at a time.",
-    image: "../../images/leaning-man.jpg",
-  },
-  {
-    name: "Amobi",
-    age: "26",
-    description:
-      "I found family and Community. I found something to be part of...I came from a bad place and now I am on my way to sorting out my life a step at a time.",
-    image: "../../images/leaning-man.jpg",
-  },
-]
-
 function Stories(props) {
+  //Static Graphql query to pull in story data
+  const data = useStaticQuery(graphql`
+    query StoryQuery {
+      allStoriesJson {
+        nodes {
+          id
+          personName
+          age
+          description
+          personImage {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const storyData = data.allStoriesJson.nodes
+
   return (
     <SectionContainer bgColor={props => props.theme.main.blue}>
       <SectionTitle>
@@ -48,27 +45,24 @@ function Stories(props) {
           </div>
           <div>
             <StyledButton textColor={props => props.theme.main.white}>
-              <a href="https://google.com">View all stories</a>
+              <a href="https://google.com">View all</a>
             </StyledButton>
           </div>
         </FlexBox>
       </SectionTitle>
 
       <CardContainer>
-        {storyCardData.map(function (item, index) {
+        {storyData.map(function (item) {
+          const image = getImage(item.personImage)
+
           return (
-            <StoryCard key={index}>
-              <img src={quotesSVG} alt="Cotation" className="quotes" />
-              <StaticImage
-                src={"../../images/leaning-man.jpg"}
-                alt="Image of a person"
-                placeholder="blurred"
-                className="imgStyle"
-              />
-              <h4>{item.name + ", " + item.age}</h4>
+            <StoryCard key={item.id}>
+              <img src={quotesSVG} className="quotes" />
+              <GatsbyImage image={image} className="card-image" />
+              <h4>{item.personName + ", " + item.age}</h4>
               <p>"{item.description}"</p>
               <StyledButton textColor={props => props.theme.main.white}>
-                <a href="htpps://google.com">Read {item.name}'s story</a>
+                <a href="https://google.com">Read {item.personName}'s story</a>
               </StyledButton>
             </StoryCard>
           )
@@ -80,24 +74,6 @@ function Stories(props) {
 
 export default Stories
 
-//graphql query
-export const storyQuery = graphql`
-  query MyQuery {
-    allStoriesJson {
-      nodes {
-        id
-        age
-        personName
-        personImage {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
-      }
-    }
-  }
-`
-
 const SectionTitle = styled.div`
   padding: 1rem 0;
 
@@ -107,15 +83,20 @@ const SectionTitle = styled.div`
 `
 
 const CardContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 8rem;
-  padding: 5rem 0;
+
+  padding-top: 3rem;
 
   @media screen and (max-width: ${props =>
       props.theme.screenDimensions.tablet}) {
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: ${props =>
+      props.theme.screenDimensions.mobile}) {
+    grid-template-columns: 1fr;
   }
 `
 
@@ -124,7 +105,7 @@ const StoryCard = styled.div`
 
   color: ${props => props.theme.main.white};
 
-  .imgStyle {
+  .card-image {
     height: 530px;
   }
 
@@ -150,10 +131,4 @@ const StoryCard = styled.div`
 
 const StyledCarousel = styled(Carousel)``
 
-const Slide = styled.div``
-
 const quotesStyles = styled.img``
-
-const CardImage = styled.div`
-  position: relative;
-`

@@ -7,17 +7,17 @@
     "personImage": "../../images/leaning-man.jpg"
   },
   {
-    "personName": "Rojal",
+    "personName": "Nic",
+    "age": "26",
+    "description":
+      "I found family and Community. I found something to be part of...I came from a bad place and now I am on my way to sorting out my life a step at a time.",
+    "personImage": "../../images/woman-with-dog.jpg"
+  },
+  {
+    "personName": "Amobi",
     "age": "26",
     "description":
       "I found family and Community. I found something to be part of...I came from a bad place and now I am on my way to sorting out my life a step at a time.",
     "personImage": "../../images/senior-man.jpg"
-  },
-  {
-    "personName": "Rojal",
-    "age": "26",
-    "description":
-      "I found family and Community. I found something to be part of...I came from a bad place and now I am on my way to sorting out my life a step at a time.",
-    "personImage": "../../images/leaning-man.jpg"
   }
 ]

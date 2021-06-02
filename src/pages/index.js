@@ -15,8 +15,11 @@ import Hero from "../components/Hero"
 import Services from "../components/sections/Services"
 import Stories from "../components/sections/Stories"
 import LatestUpdates from "../components/sections/LatestUpdates"
-import Volunteer from "../components/sections/Volunteer"
+import Fundraise from "../components/sections/Fundraise"
 import TopBar from "../components/TopBar"
+import Volunteer from "../components/sections/Volunteer"
+import GetInvolved from "../components/sections/GetInvolved"
+import ContactUs from "../components/sections/ContactUs"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -28,8 +31,11 @@ const BlogIndex = ({ data, location }) => {
       <Slider />
       <Services />
       <Stories />
-      {/* <Volunteer /> */}
+      <GetInvolved />
+      <Fundraise />
       <LatestUpdates postData={posts} />
+      <Volunteer />
+      <ContactUs />
     </Layout>
   )
 }

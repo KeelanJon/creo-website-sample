@@ -1,0 +1,20 @@
+[
+    {
+      "title": "Become a volunteer",
+      "description":
+        "Volunteering at Mind can be a really rewarding and useful experience - and there's probably more ways of doing it than you might think.",
+      "thumbnail": "../../images/protesting-woman.jpg"
+    },
+    {
+        "title": "Become a fundraiser",
+        "description":
+          "Volunteering at Mind can be a really rewarding and useful experience - and there's probably more ways of doing it than you might think.",
+        "thumbnail": "../../images/gamer-woman.jpg"
+    },
+    {
+        "title": "Donate to Newport Mind",
+        "description":
+          "Volunteering at Mind can be a really rewarding and useful experience - and there's probably more ways of doing it than you might think.",
+        "thumbnail": "../../images/discussion-image.jpg"
+    }
+  ]
