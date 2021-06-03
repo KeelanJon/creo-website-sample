@@ -5,10 +5,10 @@ module.exports = {
       name: `Keelan Jonathan`,
       summary: `A sample website coded by Keelan Jonathan for CREO.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `A Mental Health Website Built for CREO by Keelan Jonathan.`,
+    siteUrl: `https://google.com`,
     social: {
-      twitter: `KeelsDesign`,
+      twitter: `MindCharity`,
     },
   },
   plugins: [

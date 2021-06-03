@@ -1,36 +1,28 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
+<!-- READ ME CONTENT HERE-->
+
 <h1 align="center">
-  Gatsby's blog starter
+  CREO INTERVIEW WEBSITE
 </h1>
 
-Kick off your project with this blog boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+This is a project built by Keelan Jonathan for <a href="https://www.creo.co.uk/">CREO</a>, sit back, relax, grab yourself a coffee and enjoy your stay. 💫
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+_Have a question? Drop me an email: [info@keelsdesign.co.uk]._
 
-## 🚀 Quick start
+## 🧐 Built with
 
-1.  **Create a Gatsby site.**
+**HTML/CSS**
 
-    Use the Gatsby CLI to create a new site, specifying the blog starter.
+**JavaScript**
 
-    ```shell
-    # create a new Gatsby site using the blog starter
-    gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog
-    ```
+**Styled Components**
 
-1.  **Start developing.**
+**ReactJS**
 
-    Navigate into your new site’s directory and start it up.
+**GatsbyJS**
 
-    ```shell
-    cd my-blog-starter/
-    gatsby develop
-    ```
+## 🚀 Deployed with
+
+**Netlify**
 
 1.  **Open the source code and start editing!**
 

@@ -4,6 +4,10 @@ import SectionContainer from "./sections/SectionContainer"
 import StyledButton from "./StyledButton"
 
 //icon imports
+import facebookIcon from "../assets/icons/facebook.svg"
+import twitterIcon from "../assets/icons/twitter.svg"
+import instagramIcon from "../assets/icons/instagram.svg"
+import tiktokIcon from "../assets/icons/tiktok.svg"
 import creoLogo from "../assets/icons/creo_logo.svg"
 
 function Footer(props) {
@@ -12,7 +16,7 @@ function Footer(props) {
       <ColumnWrapper>
         <LinkColumn>
           <InnerColumn style={{ paddingLeft: "0", borderLeft: "none" }}>
-            <Logo />
+            <Logo>LOGO</Logo>
           </InnerColumn>
 
           <StyledButton
@@ -50,6 +54,20 @@ function Footer(props) {
         <LinkColumn>
           <InnerColumn>
             <h5>Connect With Us</h5>
+            <IconContainer>
+              <a href="https://google.com">
+                <Icon src={facebookIcon} />
+              </a>
+              <a href="https://google.com">
+                <Icon src={twitterIcon} />
+              </a>
+              <a href="https://google.com">
+                <Icon src={instagramIcon} />
+              </a>
+              <a href="https://google.com">
+                <Icon src={tiktokIcon} />
+              </a>
+            </IconContainer>
           </InnerColumn>
         </LinkColumn>
         <LinkColumn>
@@ -76,6 +94,23 @@ function Footer(props) {
 }
 
 export default Footer
+
+//Icon Styles
+const IconContainer = styled.div`
+  a {
+    display: inline;
+  }
+`
+
+const Icon = styled.img`
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+
+  &:hover {
+    opacity: 0.5;
+  }
+`
 
 //Component Styles here
 const ColumnWrapper = styled.div`
@@ -141,11 +176,12 @@ const InnerColumn = styled.div`
       props.theme.screenDimensions.tablet}) {
     display: flex;
     flex-direction: column;
-
+    width: 100%;
     height: 100%;
+
     border: none;
     border-top: 1px solid ${props => props.theme.main.violet};
-    padding: 2rem;
+    padding: 2rem 0;
   }
 `
 
@@ -178,12 +214,12 @@ const Credits = styled.div`
 const Logo = styled.div`
   height: 100px;
   width: 200px;
+  padding: 1rem;
   background: #ffffff;
 
   @media screen and (max-width: ${props =>
       props.theme.screenDimensions.tablet}) {
-    height: 50px;
     width: 80%;
-    margin: 2rem auto;
+    margin: auto auto;
   }
 `
