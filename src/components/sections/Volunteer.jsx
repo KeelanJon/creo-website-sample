@@ -56,6 +56,7 @@ function Volunteer(props) {
 
 export default Volunteer
 
+//Component Styles
 const FlexContainer = styled.div`
   display: flex;
   align-items: center;

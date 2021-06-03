@@ -109,12 +109,12 @@ const TextWrapper = styled.div`
 
 //Social Icon styles
 const Icon = styled.img`
-  height: 25px;
-  width: 25px;
-  padding: 2px;
+  height: 30px;
+  width: 30px;
+  padding: 5px;
   background: ${props => props.theme.main.blue};
   border-radius: 50%;
-  fill: red !important;
+  margin-right: 0.5rem;
 `
 
 const FacecbookIcon = styled(Icon)``

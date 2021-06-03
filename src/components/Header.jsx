@@ -5,7 +5,7 @@ import StyledButton from "./StyledButton"
 import Logo from "./Logo"
 
 //Array used to store nav link data
-//Note to self, perhaps you should store this in a seperate file?
+//Note to self, perhaps you should store this in a seperate file...
 
 const NavLinks = [
   {
@@ -40,33 +40,40 @@ const NavLinks = [
   },
 ]
 
+//Note Link component will output an error when linking to
+//an external link. Ideally these are used only internally.
+
 function Header(props) {
   return (
     <Container>
       <ContentWrapper>
-        <div>
+        <Link to="/">
           <Logo />
-        </div>
+        </Link>
         <StyledNav>
           {NavLinks.map(function (item, index) {
             return <Link to={item.link}>{item.name}</Link>
           })}
         </StyledNav>
         <div>
-          <StyledButton
-            textColor={props => props.theme.main.white}
-            primary={true}
-            style={{ marginRight: "1rem" }}
-          >
-            Donate
-          </StyledButton>
-          <StyledButton
-            textColor={props => props.theme.main.white}
-            buttonColor={props => props.theme.main.pink}
-            primary={true}
-          >
-            Need Urgent Help?
-          </StyledButton>
+          <a href="https://google.com">
+            <StyledButton
+              textColor={props => props.theme.main.white}
+              primary={true}
+              style={{ marginRight: "1rem" }}
+            >
+              Donate
+            </StyledButton>
+          </a>
+          <a href="https://google.com">
+            <StyledButton
+              textColor={props => props.theme.main.white}
+              buttonColor={props => props.theme.main.pink}
+              primary={true}
+            >
+              Need Urgent Help?
+            </StyledButton>
+          </a>
         </div>
       </ContentWrapper>
     </Container>

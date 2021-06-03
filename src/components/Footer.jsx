@@ -56,16 +56,16 @@ function Footer(props) {
             <h5>Connect With Us</h5>
             <IconContainer>
               <a href="https://google.com">
-                <Icon src={facebookIcon} />
+                <Icon src={facebookIcon} alt="Social Icon" />
               </a>
               <a href="https://google.com">
-                <Icon src={twitterIcon} />
+                <Icon src={twitterIcon} alt="Social Icon" />
               </a>
               <a href="https://google.com">
-                <Icon src={instagramIcon} />
+                <Icon src={instagramIcon} alt="Social Icon" />
               </a>
               <a href="https://google.com">
-                <Icon src={tiktokIcon} />
+                <Icon src={tiktokIcon} alt="Social Icon" />
               </a>
             </IconContainer>
           </InnerColumn>
@@ -85,7 +85,7 @@ function Footer(props) {
         <p>
           Design & Build by
           <a href="https://google.com">
-            <img src={creoLogo} />
+            <img src={creoLogo} alt="Creo logo" />
           </a>
         </p>
       </Credits>

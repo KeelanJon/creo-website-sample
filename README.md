@@ -1,7 +1,7 @@
 <!-- READ ME CONTENT HERE-->
 
 <h1 align="center">
-  CREO INTERVIEW WEBSITE
+  CREO WEBSITE
 </h1>
 
 This is a project built by Keelan Jonathan for <a href="https://www.creo.co.uk/">CREO</a>, sit back, relax, grab yourself a coffee and enjoy your stay. 💫
@@ -12,17 +12,49 @@ _Have a question? Drop me an email: [info@keelsdesign.co.uk]._
 
 **HTML/CSS**
 
-[**JavaScript**](https://styled-components.com/)
+**JavaScript**
 
-**Styled Components - CSS in JS**
+[**Styled Components - CSS in JS**](https://styled-components.com/)
 
-**ReactJS - Javascript Library**
+[**ReactJS - Javascript Library**](https://reactjs.org/)
 
-**GatsbyJS - Graphql powered, Static Site Generator**
+[**GatsbyJS - Graphql powered, Static Site Generator**](https://www.gatsbyjs.com/)
 
 ## 🚀 Deployed with
 
-**Netlify**
+[**Netlify**](https://www.netlify.com/)
+
+## What's inside?
+
+A quick look at the files and directories you'll see in this project.
+
+    .
+    ├── node_modules
+    ├── content - Markdown for blog/post content
+    ├── src
+        ── assets
+        ── components
+        ── data
+        ── hooks
+        ── images
+        ── pages
+        ── styles
+        ── templates
+        ── globalStyles.js
+    ├── gatsby-browser.js
+    ├── gatsby-config.js
+    ├── gatsby-node.js
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
+
+## General component structure
+
+What to expect within a component
+
+    - imports
+    - component
+    - component styles
 
 <!-- 1.  **Open the source code and start editing!**
 

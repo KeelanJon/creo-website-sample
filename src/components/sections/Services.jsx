@@ -70,7 +70,11 @@ function Services() {
       <ServicesContainer>
         {services.map(function (item, index) {
           return (
-            <ServiceCard bgColor={item.bgColor} color={item.textColor}>
+            <ServiceCard
+              bgColor={item.bgColor}
+              color={item.textColor}
+              key={index}
+            >
               <div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>

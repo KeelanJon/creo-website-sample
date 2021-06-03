@@ -5,6 +5,8 @@ import { StaticImage } from "gatsby-plugin-image"
 import StyledButton from "./StyledButton"
 import FeaturedImage from "../images/smiling-woman.jpg"
 
+//Component takes advantage of the bootstrap carousel component
+//for the slider functionality
 function Slider() {
   const slideID = [1, 2, 3]
 
@@ -39,6 +41,7 @@ function Slider() {
 
 export default Slider
 
+//Component Styles
 const mobileButtonStyles = {
   width: "100%",
 }

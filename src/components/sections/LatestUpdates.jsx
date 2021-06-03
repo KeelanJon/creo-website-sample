@@ -20,7 +20,7 @@ function LatestUpdates(props) {
         {posts.map(function (post, index) {
           const image = getImage(post.frontmatter.featuredImage)
           return (
-            <ArticleCard>
+            <ArticleCard key={index}>
               {{ image } ? (
                 <GatsbyImage
                   image={image}

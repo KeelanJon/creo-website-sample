@@ -6,10 +6,4 @@ featuredImage: "../../../src/images/playing-games.jpg"
 category: "event"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pretium dui diam, sed pulvinar nulla molestie in. Etiam at arcu velit. Curabitur vestibulum lobortis malesuada. Sed sagittis faucibus mi sed porttitor.
-
-([Wikipedia Link](https://en.wikipedia.org/wiki/Salted_duck_egg))
-
-Yeah, I didn't either.
+This would be a piece of post content!

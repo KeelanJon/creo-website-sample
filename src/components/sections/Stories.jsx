@@ -58,7 +58,11 @@ function Stories(props) {
           return (
             <StoryCard key={item.id}>
               <img src={quotesSVG} className="quotes" />
-              <GatsbyImage image={image} className="card-image" />
+              <GatsbyImage
+                image={image}
+                className="card-image"
+                alt="An image of a person"
+              />
               <h4>{item.personName + ", " + item.age}</h4>
               <p>"{item.description}"</p>
               <StyledButton textColor={props => props.theme.main.white}>

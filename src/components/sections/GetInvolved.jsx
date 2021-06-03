@@ -39,7 +39,6 @@ function GetInvolved(props) {
 
   return (
     <SectionContainer>
-      {console.log(supportData)}
       <TextWrapper>
         <h2>How you can help</h2>
         <StyledButton>

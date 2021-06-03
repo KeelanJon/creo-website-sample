@@ -52,6 +52,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark {
       nodes {
+        id
         excerpt
         fields {
           slug
@@ -70,12 +71,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
-
-//Styled component used as a section content container
-const SectionContainer = styled.section`
-  ${"" /* max-width: ${props => props.theme.screenDimensions.desktop}; */}
-  padding: 0% 5%;
-  margin: auto auto;
-  background: ${props => props.bgColor};
 `

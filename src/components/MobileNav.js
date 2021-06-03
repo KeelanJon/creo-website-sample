@@ -24,7 +24,11 @@ function MobileNav(props) {
         <NavContainer>
           <StyledNav>
             {NavLinks.map(function (item, index) {
-              return <Link to={item.link}>{item.name}</Link>
+              return (
+                <Link to={item.link} key={index}>
+                  {item.name}
+                </Link>
+              )
             })}
           </StyledNav>
           <StyledButton
