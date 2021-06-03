@@ -187,7 +187,7 @@ const InnerColumn = styled.div`
 
 const Credits = styled.div`
   display: flex;
-  align-items: center;W
+  align-items: center;
   justify-content: space-between;
 
   padding: 2rem 0;
@@ -201,7 +201,7 @@ const Credits = styled.div`
   }
 
   @media screen and (max-width: ${props =>
-    props.theme.screenDimensions.tablet}) {
+      props.theme.screenDimensions.tablet}) {
     flex-direction: column;
     text-align: center;
 

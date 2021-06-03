@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 
 //Component imports
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Header from "../components/Header"
