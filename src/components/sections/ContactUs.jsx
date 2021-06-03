@@ -11,7 +11,12 @@ function ContactUs() {
   return (
     <SectionContainer>
       <GridContainer>
-        <TextWrapper>
+        <TextWrapper
+          data-sal="slide-up"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+          data-sal-duration="600"
+        >
           <div>
             <h2>We're here to help</h2>
             <p>
@@ -36,7 +41,12 @@ function ContactUs() {
             </a>
           </div>
         </TextWrapper>
-        <div>
+        <div
+          data-sal="slide-up"
+          data-sal-delay="300"
+          data-sal-easing="ease"
+          data-sal-duration="600"
+        >
           <StyledForm action="https://google.com">
             <label for="reason">Your reason for contacting us today?*</label>
             <select name="reason" required>

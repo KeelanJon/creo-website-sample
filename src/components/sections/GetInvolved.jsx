@@ -49,7 +49,14 @@ function GetInvolved(props) {
         {supportData.map(function (item) {
           const image = getImage(item.thumbnail)
           return (
-            <ArticleCard key={item.id}>
+            <ArticleCard
+              key={item.id}
+              indicators
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-easing="ease"
+              data-sal-duration="600"
+            >
               <ArticleImageWrapper>
                 {{ image } ? (
                   <GatsbyImage

@@ -74,6 +74,10 @@ function Services() {
               bgColor={item.bgColor}
               color={item.textColor}
               key={index}
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-easing="ease"
+              data-sal-duration="600"
             >
               <div>
                 <h3>{item.title}</h3>

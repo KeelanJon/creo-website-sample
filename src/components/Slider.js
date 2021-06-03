@@ -11,7 +11,13 @@ function Slider() {
   const slideID = [1, 2, 3]
 
   return (
-    <StyledCarousel indicators>
+    <StyledCarousel
+      indicators
+      data-sal="slide-up"
+      data-sal-delay="300"
+      data-sal-easing="ease"
+      data-sal-duration="600"
+    >
       {slideID.map(function (item) {
         return (
           <Carousel.Item key={item}>

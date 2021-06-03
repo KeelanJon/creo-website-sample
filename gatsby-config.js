@@ -140,6 +140,14 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-gatsby-cloud`,
     {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+        threshold: 0.2,
+        once: true,
+      },
+    },
+
+    {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.

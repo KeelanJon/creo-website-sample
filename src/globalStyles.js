@@ -35,6 +35,7 @@ const GlobalStyle = createGlobalStyle`
         scroll-behavior: smooth;
         background: ${props => props.theme.main.backgroundColor};
         font-family: 'Mind Meridian Regular';
+        overflow-x: hidden;
 
         h1{
             font-family: 'Mind Meridian Display';

@@ -45,7 +45,12 @@ const NavLinks = [
 
 function Header(props) {
   return (
-    <Container>
+    <Container
+      data-sal="slide-down"
+      data-sal-delay="300"
+      data-sal-easing="ease"
+      data-sal-duration="600"
+    >
       <ContentWrapper>
         <Link to="/">
           <Logo />

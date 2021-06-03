@@ -28,7 +28,7 @@ const Layout = ({ location, title, children }) => {
   // }
 
   return (
-    <Theme className="global-wrapper" data-is-root-path={isRootPath}>
+    <Theme data-is-root-path={isRootPath}>
       <GlobalStyle />
       <TopBar />
       <Header />

@@ -56,7 +56,14 @@ function Stories(props) {
           const image = getImage(item.personImage)
 
           return (
-            <StoryCard key={item.id}>
+            <StoryCard
+              key={item.id}
+              indicators
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-easing="ease"
+              data-sal-duration="600"
+            >
               <img src={quotesSVG} className="quotes" />
               <GatsbyImage
                 image={image}
