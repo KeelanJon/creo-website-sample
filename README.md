@@ -20,7 +20,7 @@ _Have a question? Drop me an email: [info@keelsdesign.co.uk]._
 
 [**GatsbyJS - Graphql powered, Static Site Generator**](https://www.gatsbyjs.com/)
 
-[**Node.js**](https://www.gatsbyjs.com/)
+[**Node.js**](https://nodejs.org/en/)
 
 ## 🚀 Deployed with
 
@@ -52,7 +52,9 @@ A quick look at the files and directories you'll see in this project.
 ## How to run locally?
 
 **Clone Repository**
+
 **Run "npm install" - Download package dependencies**
+
 **Run "Gatsby Develop" - Start local server**
 
 ## General component structure
