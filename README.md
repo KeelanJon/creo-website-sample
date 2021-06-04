@@ -20,6 +20,8 @@ _Have a question? Drop me an email: [info@keelsdesign.co.uk]._
 
 [**GatsbyJS - Graphql powered, Static Site Generator**](https://www.gatsbyjs.com/)
 
+[**Node.js**](https://www.gatsbyjs.com/)
+
 ## 🚀 Deployed with
 
 [**Netlify**](https://www.netlify.com/)
@@ -29,7 +31,6 @@ _Have a question? Drop me an email: [info@keelsdesign.co.uk]._
 A quick look at the files and directories you'll see in this project.
 
     .
-    ├── node_modules
     ├── content - Markdown for blog/post content
     ├── src
         ── assets
@@ -47,6 +48,12 @@ A quick look at the files and directories you'll see in this project.
     ├── package-lock.json
     ├── package.json
     └── README.md
+
+## How to run locally?
+
+**Clone Repository**
+**Run "npm install" - Download package dependencies**
+**Run "Gatsby Develop" - Start local server**
 
 ## General component structure
 
